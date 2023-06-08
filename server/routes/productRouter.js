@@ -6,6 +6,7 @@ const checkRoleMiddleware = require("../middleware/checkRoleMiddleware");
 router.post("/",checkRoleMiddleware("ADMIN"), productController.create)
 router.get("/", productController.getAll)
 router.get("/:id", productController.getOne)
+router.post("/:id", productController.addBasketProduct)
 router.delete('/:id',checkRoleMiddleware("ADMIN"), productController.delete);
 router.put('/:id', checkRoleMiddleware("ADMIN"),productController.update);
 
